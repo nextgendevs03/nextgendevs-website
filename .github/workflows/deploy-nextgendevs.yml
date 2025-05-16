@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:  # 👈 Enables manual "Run workflow" button
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
