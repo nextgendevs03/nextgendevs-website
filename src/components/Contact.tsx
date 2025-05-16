@@ -192,13 +192,14 @@ const Contact = () => {
               <div className="mt-8 bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
                 <h4 className="text-xl font-semibold mb-4">Our Location</h4>
                 <p className="mb-2">
-                  <strong>Address:</strong> 123 Tech Park, Bangalore, Karnataka, India
+                  <strong>Address:</strong> Office no 02, Shree siddhi Mansi hights,
+Kapil Nagar, Mhalunge, Pune
                 </p>
                 <p className="mb-2">
-                  <strong>Email:</strong> info@techtrain.com
+                  <strong>Email:</strong> info@nextgendevs.in
                 </p>
                 <p className="mb-2">
-                  <strong>Phone:</strong> +91 9876543210
+                  <strong>Phone:</strong> +91 8482960186
                 </p>
                 <p>
                   <strong>Hours:</strong> Monday - Friday, 9am - 6pm

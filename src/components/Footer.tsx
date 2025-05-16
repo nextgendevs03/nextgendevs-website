@@ -1,4 +1,4 @@
-import { Code2, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Code2, Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -15,14 +15,14 @@ const Footer = () => {
               training and career support to excel in the tech industry.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <a href="https://github.com/nextgendevs03?tab=repositories" className="text-gray-400 hover:text-purple-400 transition-colors" target='_blank'>
                 <Github size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <a href="https://www.linkedin.com/company/nextgendevs03/" className="text-gray-400 hover:text-purple-400 transition-colors" target='_blank'>
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-                <Twitter size={20} />
+              <a href="https://www.instagram.com/nextgendevs.in?igsh=dmM3b29vYms5Zzlx" className="text-gray-400 hover:text-purple-400 transition-colors" target='_blank'>
+                <Instagram size={20} />
               </a>
             </div>
           </div>
@@ -72,12 +72,12 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-purple-400 mr-3 mt-0.5" />
                 <span className="text-gray-400">
-                  123 Tech Park, Bangalore, Karnataka, India
+                Office no 02, Shree siddhi Mansi hights, Kapil Nagar, Mhalunge, Pune
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-purple-400 mr-3" />
-                <span className="text-gray-400">+91 9876543210</span>
+                <span className="text-gray-400">+91 8482960186</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-purple-400 mr-3" />

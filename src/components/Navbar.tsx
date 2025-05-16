@@ -45,7 +45,8 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }: NavbarProps) => {
         </a>
 
         <nav className="hidden md:flex items-center space-x-8">
-          {['Home', 'Services', 'Mentorship', 'Resources', 'Testimonials', 'Contact'].map((item) => (
+          {/* Testimonials removed */}
+          {['Home', 'Services', 'Mentorship', 'Resources', 'Contact'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

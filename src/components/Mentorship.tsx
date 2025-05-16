@@ -1,4 +1,5 @@
 import { Award, CheckCircle, Star, User } from 'lucide-react';
+import placeholder from "../assets/public/PlaceholderImage.webp";
 
 interface Mentor {
   id: number;
@@ -12,27 +13,27 @@ interface Mentor {
 const mentors: Mentor[] = [
   {
     id: 1,
-    name: 'Arun Kumar',
-    role: 'Senior Frontend Developer',
-    expertise: ['React', 'TypeScript', 'UI/UX'],
-    experience: '8+ years of experience in building enterprise-level React applications',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    name: 'Sandesh Uttawar',
+    role: 'Full Stack Developer',
+    expertise: ['TypeScript', 'React', 'Angular', 'Nodejs', 'DBMS'],
+    experience: '8+ years of experience in building enterprise-level full-stack applications',
+    image: placeholder,
   },
   {
     id: 2,
-    name: 'Priya Singh',
+    name: 'Hardik Shah',
     role: 'Full Stack Developer',
-    expertise: ['Node.js', 'MongoDB', 'React'],
-    experience: '6+ years of experience in MERN stack development',
-    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    expertise: ['TypeScript', 'Node.js', 'React','DBMS', 'AWS'],
+    experience: '8+ years of experience in MERN stack development',
+    image: placeholder,
   },
   {
     id: 3,
-    name: 'Rajesh Verma',
+    name: 'Kishor Chate',
     role: 'QA Automation Expert',
-    expertise: ['Java', 'Selenium', 'TestNG'],
-    experience: '10+ years of experience in automation testing and QA frameworks',
-    image: 'https://images.pexels.com/photos/3771807/pexels-photo-3771807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    expertise: ['Java', 'Selenium', 'TestNG', 'Playwright'],
+    experience: '9+ years of experience in automation testing and QA frameworks',
+    image: placeholder,
   },
 ];
 
