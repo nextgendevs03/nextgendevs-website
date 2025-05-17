@@ -1,9 +1,11 @@
-import { ArrowRight, Github, Code2, BookOpen } from 'lucide-react';
+import { ArrowRight, Code2, BookOpen, BugOff } from 'lucide-react';
+import TelegramBanner from './TelegramBanner';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-purple-700 via-purple-600 to-purple-800 text-white">
-      <div className="container mx-auto px-4">
+    <section id="home" className="pt-16 pb-16 md:pt-24 md:pb-24 bg-gradient-to-br from-purple-700 via-purple-600 to-purple-800">
+      <TelegramBanner />
+      <div className="container mx-auto px-4 mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 animate-slide-right">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -28,7 +30,7 @@ const Hero = () => {
                 <span className="text-purple-100">React, Node.js, TypeScript</span>
               </div>
               <div className="flex items-center gap-2">
-                <Github className="text-purple-300" size={20} />
+                <BugOff className="text-purple-300" size={20} />
                 <span className="text-purple-100">Java, Selenium</span>
               </div>
             </div>
@@ -53,7 +55,7 @@ const Hero = () => {
                       <span className="text-purple-600">function</span> <span className="text-yellow-600">App</span>() {"{"}
                       <br/>&nbsp;&nbsp;<span className="text-purple-600">return</span> (
                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-blue-600">div</span>&gt;
-                      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-blue-600">h1</span>&gt;Hello, TechTrain!&lt;/<span className="text-blue-600">h1</span>&gt;
+                      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-blue-600">h1</span>&gt;Hello, NextGenDevs!&lt;/<span className="text-blue-600">h1</span>&gt;
                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-blue-600">p</span>&gt;Welcome to your coding journey&lt;/<span className="text-blue-600">p</span>&gt;
                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span className="text-blue-600">div</span>&gt;
                       <br/>&nbsp;&nbsp;);
@@ -72,7 +74,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 };
