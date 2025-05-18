@@ -1,6 +1,6 @@
 import { Award, CheckCircle, Star, User } from 'lucide-react';
 // import placeholder from "../assets/public/PlaceholderImage.webp";
-import hardik from "../assets/public/hardik.png";
+import hardik from "../assets/public/hardik6.jpg";
 import kishor from "../assets/public/Kishor.jpg";
 import sandesh from "../assets/public/Sandesh.png";
 
