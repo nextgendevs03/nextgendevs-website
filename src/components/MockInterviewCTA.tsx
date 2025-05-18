@@ -13,7 +13,7 @@ const MockInterviewCTA = () => {
               <p className="text-purple-700 text-lg mb-4">
                 Practice with industry experts and get detailed feedback
                 <br />
-                <span className="font-semibold">Limited slots available at ₹299 only!</span>
+                <span className="font-semibold">Limited slots available at ₹99 only!</span>
               </p>
               <ul className="text-purple-600 mb-6">
                 <li className="flex items-center mb-2">
@@ -33,7 +33,7 @@ const MockInterviewCTA = () => {
             <div className="flex flex-col items-center">
               <Calendar className="h-12 w-12 text-purple-600 mb-4" />
               <a
-                href="https://calendly.com/nextgendevs/mock-interview"
+                href="https://topmate.io/nextgendevs/1552498"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary text-lg px-8"

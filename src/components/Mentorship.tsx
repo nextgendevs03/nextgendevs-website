@@ -1,5 +1,8 @@
 import { Award, CheckCircle, Star, User } from 'lucide-react';
-import placeholder from "../assets/public/PlaceholderImage.webp";
+// import placeholder from "../assets/public/PlaceholderImage.webp";
+import hardik from "../assets/public/hardik.png";
+import kishor from "../assets/public/Kishor.jpg";
+import sandesh from "../assets/public/Sandesh.png";
 
 interface Mentor {
   id: number;
@@ -17,7 +20,7 @@ const mentors: Mentor[] = [
     role: 'Full Stack Developer',
     expertise: ['TypeScript', 'React', 'Angular', 'Nodejs', 'DBMS'],
     experience: '8+ years of experience in building enterprise-level full-stack applications',
-    image: placeholder,
+    image: sandesh,
   },
   {
     id: 2,
@@ -25,7 +28,7 @@ const mentors: Mentor[] = [
     role: 'Full Stack Developer',
     expertise: ['TypeScript', 'Node.js', 'React','DBMS', 'AWS'],
     experience: '8+ years of experience in MERN stack development',
-    image: placeholder,
+    image: hardik,
   },
   {
     id: 3,
@@ -33,7 +36,7 @@ const mentors: Mentor[] = [
     role: 'QA Automation Expert',
     expertise: ['Java', 'Selenium', 'TestNG', 'Playwright'],
     experience: '9+ years of experience in automation testing and QA frameworks',
-    image: placeholder,
+    image: kishor,
   },
 ];
 
