@@ -1,0 +1,17 @@
+{
+  "name": "Er. Lakhan Lal Gupta",
+  "profession": "Software Engineer",
+  "company": "TCS",
+  "certifications": [
+    {
+      "title": "Certified Data Scientist",
+      "organization": "Vkonex AI Research (IIT Bombay)"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Creator of Codelopment",
+      "description": "A popular YouTube channel that has helped lakhs of engineering students with project ideas and coding resources."
+    }
+  ]
+}
