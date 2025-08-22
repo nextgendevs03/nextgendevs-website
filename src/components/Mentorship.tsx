@@ -164,100 +164,119 @@ const Mentorship = () => {
         </div>
         
 <h3 className="text-4xl font-bold text-center mb-10">Meet Our Expert Mentors</h3>
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {mentors.map((mentor) => (
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  {mentors.map((mentor) => (
     <div
       key={mentor.id}
-      className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl"
+      className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-transform hover:-translate-y-1"
       onClick={() => setSelectedMentor(mentor)}
     >
-
-      <img
-        src={mentor.image}
-        alt={mentor.name}
-         className="w-full h-56 object-cover rounded-t-xl"
-      />
+      <div className="w-full aspect-[3/2] overflow-hidden rounded-t-xl">
+        <img
+          src={mentor.image}
+          alt={mentor.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="p-4">
         <h4 className="text-lg font-semibold">{mentor.name}</h4>
         <p className="text-purple-600">{mentor.role}</p>
         <p className="text-sm text-gray-600 mt-1">{mentor.experience}</p>
-        <div className="mt-2 text-sm text-gray-700">
-       <span className="font-semibold">Rating:</span>{" "}
-       {"⭐".repeat(mentor.rating ?? 0)}
-       {"☆".repeat(5 - (mentor.rating ?? 0))} 
-       <span className="ml-1">({mentor.rating ?? "N/A"}/5)</span>
-      </div>
-
-    <p className="mt-1 text-sm text-gray-700">
-      <span className="font-semibold">Expertise:</span>{" "}
-     {(Array.isArray(mentor.expertise) ? mentor.expertise : [mentor.expertise]).join(", ")}
-    </p>
-       
       </div>
     </div>
   ))}
 </div>
+
       {selectedMentor && (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
-          <div className="bg-white rounded-xl p-6 max-w-lg w-full relative overflow-y-auto max-h-[90vh]">
+          <div className="bg-white rounded-2xl p-6 max-w-lg w-full relative overflow-y-auto max-h-[90vh] shadow-xl">
+           
+           
            <button 
-  className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
-  onClick={() => setSelectedMentor(null)}
->
-  <X className="w-5 h-5" />
-</button>             
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+              onClick={() => setSelectedMentor(null)}
+            >
+              <X className="w-5 h-5" />
+            </button>             
 
-<div className="w-full flex justify-center mb-3">
-  <img 
-    src={selectedMentor.image} 
-    alt={selectedMentor.name} 
-    className="w-36 h-44 object-cover object-top rounded-lg shadow-md bg-gray-100"
-  />
-</div>
+           
+            <div className="w-full flex justify-center mb-3">
+              <img 
+                src={selectedMentor.image} 
+                alt={selectedMentor.name} 
+                className="w-36 h-44 object-cover object-top rounded-lg shadow-md bg-gray-100"
+              />
+            </div>
 
-<h3 className="text-lg font-bold text-center">{selectedMentor.name}</h3>
-<p className="text-purple-600 text-sm text-center">{selectedMentor.role}</p>
-<p className="text-gray-600 text-sm text-center">{selectedMentor.experience}</p>
-<p className="mt-1 font-medium text-sm text-center">⭐ {selectedMentor.rating}</p>
-<div className="mt-2 text-sm leading-relaxed text-center">{selectedMentor.about}</div>
+           
+            <h3 className="text-lg font-bold text-center">{selectedMentor.name}</h3>
+            <p className="text-purple-600 text-sm text-center">{selectedMentor.role}</p>
+            <p className="text-gray-600 text-sm text-center">{selectedMentor.experience}</p>
+            
+           
+            <div className="flex justify-center mt-2 text-yellow-500">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star 
+                  key={i} 
+                  className={`w-4 h-4 ${i < Math.round(selectedMentor.rating ?? 0) ? "fill-yellow-400" : "text-gray-300"}`} 
+                />
+              ))}
+            </div>
 
-<h4 className="mt-3 font-semibold text-center">Expertise:</h4>
-<div className="flex gap-1.5 flex-wrap mt-2 justify-center">
-  {selectedMentor.expertise.map((skill, index) => (
-    <span 
-      key={index} 
-      className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs"
-    >
-      {skill}
-    </span>
+            <h4 className="mt-4 font-semibold text-left">About:</h4>
+            <div className="mt-2 text-sm leading-relaxed text-gray-700 text-left">
+           {selectedMentor.about}
+           </div>
+
+            
+            <h4 className="mt-4 font-semibold text-left">Expertise:</h4>
+            <div className="flex gap-1.5 flex-wrap mt-2 justify-start">
+            {selectedMentor.expertise.map((skill, index) => (
+           <span 
+           key={index} 
+           className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs"
+        >
+        {skill}
+        </span>
   ))}
-</div>
+     </div>
 
-            <h4 className="mt-4 font-semibold">Achievements:</h4>
-            <ul className="list-disc list-inside text-gray-600">
+           
+            <h4 className="mt-4 font-semibold">Key Achievements:</h4>
+            <ul className="mt-2 space-y-2">
               {selectedMentor.achievements?.map((achievement, index) => (
-                <li key={index}>{achievement}</li>
+                <li key={index} className="flex items-start gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
+                  {achievement}
+                </li>
               ))}
             </ul>
 
-            <p className="mt-4 text-sm text-gray-600">
-              🎓 {selectedMentor.studentsHelped} students helped
-            </p>
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg shadow-inner text-center">
+              <p className="text-sm font-medium text-gray-800">
+                🎓 {selectedMentor.studentsHelped} Students Helped
+              </p>
+              <p className="mt-2 text-sm font-semibold text-green-600">
+               Available for Mentorship
+              </p>
+            </div>
 
-            <div className="mt-6 flex gap-4">
+            
+            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="#" 
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center"
               >
                 Connect on Whatsapp
               </a>
               <a 
                 href="#" 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg"
+                className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-center"
               >
                 Book Session
               </a>
             </div>
+
           </div>
         </div>
       )}
