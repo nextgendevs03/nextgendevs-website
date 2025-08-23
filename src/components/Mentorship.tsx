@@ -5,7 +5,6 @@ import kishor from "../assets/public/Kishor.jpg";
 import sandesh from "../assets/public/Sandesh.png";
 import erLakhanLalGupta from "../assets/public/Er.Lakhan Lal Gupta.jpg";
 
-
 interface Mentor {
   id: number;
   name: string;
@@ -69,20 +68,20 @@ const mentors: Mentor[] = [
     rating: 4.8,
   },
   {
-  id: 4,
-  name: 'Er. Lakhan Lal Gupta',
-  role: 'Software Engineer',
-  expertise: ['Data Science', 'Python', 'Machine Learning', 'AI'],
-  experience: 'Certified Data Scientist from Vkonex AI Research (IIT Bombay)',
-  image: erLakhanLalGupta,
-  about: "Creator of Codelopment, a popular YouTube channel helping engineering students with project ideas and coding resources.",
-  achievements: [
-    "Certified Data Scientist from Vkonex AI Research (IIT Bombay)",
-    "Creator of Codelopment YouTube channel"
-  ],
-  studentsHelped: "1000+",
-  rating: 5.0,
-},
+    id: 4,
+    name: 'Er. Lakhan Lal Gupta',
+    role: 'Software Engineer',
+    expertise: ['Data Science', 'Python', 'Machine Learning', 'AI'],
+    experience: 'Certified Data Scientist from Vkonex AI Research (IIT Bombay)',
+    image: erLakhanLalGupta,
+    about: "Creator of Codelopment, a popular YouTube channel helping engineering students with project ideas and coding resources.",
+    achievements: [
+      "Certified Data Scientist from Vkonex AI Research (IIT Bombay)",
+      "Creator of Codelopment YouTube channel"
+    ],
+    studentsHelped: "1000+",
+    rating: 5.0,
+  },
 ];
 
 const features = [
@@ -122,9 +121,10 @@ const Mentorship = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Expert Mentorship</h2>
         <div className="w-24 h-1 bg-purple-600 mx-auto mb-8"></div>
         <p className="text-lg text-gray-600 text-center mb-12">
-          Learn from industry professionals with years of experience.Get personalized  guidance and acceierate your career growth with our expert mentors.
+          Learn from industry professionals with years of experience. Get personalized guidance and accelerate your career growth with our expert mentors.
         </p>
 
+        {/* Stats Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
             <Users className="w-10 h-10 text-blue-500 mx-auto mb-4" />
@@ -151,6 +151,7 @@ const Mentorship = () => {
           </div>
         </div>
 
+        {/* Features Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {features.map((feature) => (
             <div key={feature.id} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg">
@@ -163,123 +164,141 @@ const Mentorship = () => {
           ))}
         </div>
         
-<h3 className="text-4xl font-bold text-center mb-10">Meet Our Expert Mentors</h3>
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-  {mentors.map((mentor) => (
-    <div
-      key={mentor.id}
-      className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-transform hover:-translate-y-1"
-      onClick={() => setSelectedMentor(mentor)}
-    >
-      <div className="w-full aspect-[3/2] overflow-hidden rounded-t-xl">
-        <img
-          src={mentor.image}
-          alt={mentor.name}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="p-4">
-        <h4 className="text-lg font-semibold">{mentor.name}</h4>
-        <p className="text-purple-600">{mentor.role}</p>
-        <p className="text-sm text-gray-600 mt-1">{mentor.experience}</p>
-      </div>
-    </div>
-  ))}
-</div>
-
-      {selectedMentor && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
-          <div className="bg-white rounded-2xl p-6 max-w-lg w-full relative overflow-y-auto max-h-[90vh] shadow-xl">
-           
-           
-           <button 
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
-              onClick={() => setSelectedMentor(null)}
+        {/* Mentors Grid */}
+        <h3 className="text-4xl font-bold text-center mb-10">Meet Our Expert Mentors</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {mentors.map((mentor) => (
+            <div
+              key={mentor.id}
+              className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-transform hover:-translate-y-1"
+              onClick={() => setSelectedMentor(mentor)}
             >
-              <X className="w-5 h-5" />
-            </button>             
-
-           
-            <div className="w-full flex justify-center mb-3">
-              <img 
-                src={selectedMentor.image} 
-                alt={selectedMentor.name} 
-                className="w-36 h-44 object-cover object-top rounded-lg shadow-md bg-gray-100"
-              />
-            </div>
-
-           
-            <h3 className="text-lg font-bold text-center">{selectedMentor.name}</h3>
-            <p className="text-purple-600 text-sm text-center">{selectedMentor.role}</p>
-            <p className="text-gray-600 text-sm text-center">{selectedMentor.experience}</p>
-            
-           
-            <div className="flex justify-center mt-2 text-yellow-500">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star 
-                  key={i} 
-                  className={`w-4 h-4 ${i < Math.round(selectedMentor.rating ?? 0) ? "fill-yellow-400" : "text-gray-300"}`} 
+              <div className="w-full aspect-[3/2] overflow-hidden rounded-t-xl">
+                <img
+                  src={mentor.image}
+                  alt={mentor.name}
+                  className="w-full h-full object-cover"
                 />
-              ))}
+              </div>
+              <div className="p-4">
+                <h4 className="text-lg font-semibold">{mentor.name}</h4>
+                <p className="text-purple-600">{mentor.role}</p>
+                <p className="text-sm text-gray-600 mt-1">{mentor.experience}</p>
+              </div>
             </div>
+          ))}
+        </div>
 
-            <h4 className="mt-4 font-semibold text-left">About:</h4>
-            <div className="mt-2 text-sm leading-relaxed text-gray-700 text-left">
-           {selectedMentor.about}
-           </div>
-
-            
-            <h4 className="mt-4 font-semibold text-left">Expertise:</h4>
-            <div className="flex gap-1.5 flex-wrap mt-2 justify-start">
-            {selectedMentor.expertise.map((skill, index) => (
-           <span 
-           key={index} 
-           className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs"
-        >
-        {skill}
-        </span>
-  ))}
-     </div>
-
-           
-            <h4 className="mt-4 font-semibold">Key Achievements:</h4>
-            <ul className="mt-2 space-y-2">
-              {selectedMentor.achievements?.map((achievement, index) => (
-                <li key={index} className="flex items-start gap-2 text-gray-700 text-sm">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
-                  {achievement}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg shadow-inner text-center">
-              <p className="text-sm font-medium text-gray-800">
-                🎓 {selectedMentor.studentsHelped} Students Helped
-              </p>
-              <p className="mt-2 text-sm font-semibold text-green-600">
-               Available for Mentorship
-              </p>
-            </div>
-
-            
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#" 
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center"
-              >
-                Connect on Whatsapp
-              </a>
-              <a 
-                href="#" 
-                className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-center"
-              >
-                Book Session
-              </a>
-            </div>
-
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16 rounded-2xl shadow-lg text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Start Your Journey?
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            Connect with our expert mentors and get personalized guidance for your career growth. 
+            Book a free consultation session today!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#"
+              className="bg-white text-purple-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100"
+            >
+              Connect on WhatsApp
+            </a>
+            <a
+              href="#"
+              className="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-green-600"
+            >
+              Book Free Consultation
+            </a>
           </div>
         </div>
-      )}
+
+        {/* Mentor Modal */}
+        {selectedMentor && (
+          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
+            <div className="bg-white rounded-2xl p-6 max-w-lg w-full relative overflow-y-auto max-h-[90vh] shadow-xl">
+              <button 
+                className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+                onClick={() => setSelectedMentor(null)}
+              >
+                <X className="w-5 h-5" />
+              </button>             
+
+              <div className="w-full flex justify-center mb-3">
+                <img 
+                  src={selectedMentor.image} 
+                  alt={selectedMentor.name} 
+                  className="w-36 h-44 object-cover object-top rounded-lg shadow-md bg-gray-100"
+                />
+              </div>
+
+              <h3 className="text-lg font-bold text-center">{selectedMentor.name}</h3>
+              <p className="text-purple-600 text-sm text-center">{selectedMentor.role}</p>
+              <p className="text-gray-600 text-sm text-center">{selectedMentor.experience}</p>
+              
+              <div className="flex justify-center mt-2 text-yellow-500">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star 
+                    key={i} 
+                    className={`w-4 h-4 ${i < Math.round(selectedMentor.rating ?? 0) ? "fill-yellow-400" : "text-gray-300"}`} 
+                  />
+                ))}
+              </div>
+
+              <h4 className="mt-4 font-semibold text-left">About:</h4>
+              <div className="mt-2 text-sm leading-relaxed text-gray-700 text-left">
+                {selectedMentor.about}
+              </div>
+
+              <h4 className="mt-4 font-semibold text-left">Expertise:</h4>
+              <div className="flex gap-1.5 flex-wrap mt-2 justify-start">
+                {selectedMentor.expertise.map((skill, index) => (
+                  <span 
+                    key={index} 
+                    className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              <h4 className="mt-4 font-semibold">Key Achievements:</h4>
+              <ul className="mt-2 space-y-2">
+                {selectedMentor.achievements?.map((achievement, index) => (
+                  <li key={index} className="flex items-start gap-2 text-gray-700 text-sm">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg shadow-inner text-center">
+                <p className="text-sm font-medium text-gray-800">
+                  🎓 {selectedMentor.studentsHelped} Students Helped
+                </p>
+                <p className="mt-2 text-sm font-semibold text-green-600">
+                  Available for Mentorship
+                </p>
+              </div>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="#" 
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center"
+                >
+                  Connect on Whatsapp
+                </a>
+                <a 
+                  href="#" 
+                  className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-center"
+                >
+                  Book Session
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
