@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import QuickActionButtons from './components/QuickActionButtons';
 import MockInterviewCTA from './components/MockInterviewCTA';
 
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

@@ -78,9 +78,9 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div 
+            <div
               key={service.id}
-              className="card p-6 animate-hover"
+              className={`card p-6 animate-hover ${activeService?.id === service.id ? 'ring-2 ring-purple-600 shadow-lg transform -translate-y-1' : ''}`}
               onMouseEnter={() => setActiveService(service)}
               onMouseLeave={() => setActiveService(null)}
             >
